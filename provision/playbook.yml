@@ -1,0 +1,8 @@
+- name: setting tutorial to server
+  hosts: vagrant
+  user: vagrant
+  sudo: yes
+  roles:
+    - httpd
+    - php
+    - mysql

@@ -11,7 +11,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "private_network", ip: "192.168.33.10"
 
   config.vm.provision :ansible do |ansible|
-    ansible.playbook = "playbook.yml"  # 作成したplaybookファイル名
-    ansible.inventory_path = "hosts"  # 作成したインベントリーファイル名
+    ansible.playbook = "provision/playbook.yml"
+    ansible.inventory_path = "provision/hosts"
+    ansible.limit = 'vagrant'
   end
 end
